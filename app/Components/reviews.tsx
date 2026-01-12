@@ -18,11 +18,13 @@ const reviewsCol2 = [
   "Honestly did not expect them to feel this good.",
 ];
 
+import TiltedCard from "./tilted-card";
+
 const Reviews: React.FC = () => {
   return (
-    <section className="relative w-full bg-neutral-900 px-6 py-32 text-white overflow-hidden">
+    <section className="relative w-full bg-neutral-900 px-6 py-32 text-white overflow-hidden font-inter font-bold">
       <div className="mx-auto max-w-7xl grid gap-20 md:grid-cols-2">
-        
+
         {/* Left copy */}
         <div className="max-w-xl">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-neutral-800/60 px-3 py-1 text-xs text-gray-300">
@@ -45,7 +47,7 @@ const Reviews: React.FC = () => {
 
         {/* Animated reviews */}
         <div className="relative grid grid-cols-2 gap-6 h-[520px] overflow-hidden">
-          
+
           {/* Column 1 */}
           <div className="reviews-scroll space-y-6">
             {[...reviewsCol1, ...reviewsCol1].map((text, i) => (
@@ -93,11 +95,22 @@ type ReviewProps = {
 };
 
 const Review = ({ text }: ReviewProps) => (
-  <div className="rounded-2xl border border-white/10 bg-neutral-800/60 p-5 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
-    <p className="mb-3 text-sm text-white/80">★★★★★</p>
-    <p className="text-sm leading-relaxed text-gray-200">{text}</p>
-    <p className="mt-4 text-xs text-gray-400">CloudKicks customer</p>
-  </div>
+  <TiltedCard
+    containerHeight="auto"
+    containerWidth="100%"
+    containerClass="bg-neutral-800/60 backdrop-blur-md border border-white/10 rounded-2xl p-5"
+    rotateAmplitude={10}
+    scaleOnHover={1.03}
+    showMobileWarning={false}
+    showTooltip={false}
+    displayOverlayContent={false}
+  >
+    <div>
+      <p className="mb-3 text-sm text-white/80">★★★★★</p>
+      <p className="text-sm leading-relaxed text-gray-200">{text}</p>
+      <p className="mt-4 text-xs text-gray-400">CloudKicks customer</p>
+    </div>
+  </TiltedCard>
 );
 
 export default Reviews;
