@@ -33,6 +33,9 @@ import Header from "./Components/header";
 import Newsletter from "./Components/newsletter";
 import Footer from "./Components/footer";
 
+import { CartProvider } from "./contexts/cart-context";
+import CartDrawer from "./Components/cart/cart-drawer";
+
 export default function RootLayout({
   children,
 }: {
@@ -43,12 +46,15 @@ export default function RootLayout({
       <body
         className={`${kanit.variable} ${signika.variable} ${geistMono.variable} ${inter.variable} font-sans min-h-screen bg-neutral-900 text-white antialiased`}
       >
-        <div className="fixed top-6 left-0 right-0 z-50">
-          <Header />
-        </div>
-        {children}
-        <Newsletter />
-        <Footer />
+        <CartProvider>
+          <div className="fixed top-6 left-0 right-0 z-50">
+            <Header />
+          </div>
+          <CartDrawer />
+          {children}
+          <Newsletter />
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

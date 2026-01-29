@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import CloudButton from "./cloud-button";
 import Reveal from "./reveal";
+import { useCart } from "../contexts/cart-context";
+import { ShoppingBag } from "lucide-react";
 
 export default function Header() {
+  const { openCart, cart } = useCart();
+
   return (
     <Reveal className="w-full" delay={100}>
       <div className="mx-auto max-w-4xl px-4 py-2">
@@ -94,26 +99,21 @@ export default function Header() {
                 <span className="absolute bottom-1 left-1 right-1 h-px bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
 
-              <Link
-                href="/cart"
+              <button
+                onClick={openCart}
                 className="group relative p-2 text-white/70 hover:text-white transition-colors duration-300"
                 aria-label="Cart"
               >
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7.5M17 13l1.5 7.5M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z"
-                  />
-                </svg>
+                <div className="relative">
+                  <ShoppingBag className="h-5 w-5" />
+                  {cart && cart.lines.edges.length > 0 && (
+                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">
+                      {cart.lines.edges.reduce((acc: number, { node }: { node: any }) => acc + node.quantity, 0)}
+                    </span>
+                  )}
+                </div>
                 <span className="absolute bottom-1 left-1 right-1 h-px bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </Link>
+              </button>
             </div>
           </div>
 
