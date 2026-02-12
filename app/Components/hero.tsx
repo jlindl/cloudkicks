@@ -1,76 +1,95 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./reveal";
 import LightRays from "./lightrays";
+import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative bg-neutral-900 text-white min-h-screen overflow-hidden">
-      {/* Rotating Background Image */}
-      <Reveal delay={600} className="absolute inset-0 pointer-events-none flex items-center justify-center z-0 !duration-[2000ms]">
-        <Image
-          src="/assets/cloudkickhero1.png"
-          alt="Hero Background Graphic"
-          width={1200}
-          height={1200}
-          className="w-[80%] md:w-[600px] h-auto object-contain opacity-70 animate-sway translate-y-12"
-        />
-      </Reveal>
+    <div className="relative bg-black text-white min-h-screen overflow-hidden flex items-center justify-center">
 
-      <div className="absolute inset-0 pointer-events-none z-0">
+      {/* Full Background Image */}
+      <motion.div
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+        className="absolute inset-0 z-0"
+      >
+        <Image
+          src="/assets/cloud_kicks_dark_hero.png"
+          alt="CloudKicks Hero Background"
+          fill
+          className="object-cover opacity-60"
+          priority
+        />
+        {/* Dark Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90" />
+      </motion.div>
+
+      {/* Light Rays Effect */}
+      <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen opacity-50">
         <LightRays
           raysOrigin="top-center"
-          raysColor="#10da10ff"
-          raysSpeed={2}
-          lightSpread={0.8}
-          rayLength={1.2}
+          raysColor="#ffffff"
+          raysSpeed={1.5}
+          lightSpread={0.6}
+          rayLength={0.8}
           followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
+          mouseInfluence={0.05}
+          noiseAmount={0.05}
+          distortion={0.1}
         />
       </div>
-      <section className="relative z-10 w-full min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-[1100px] text-center pt-20">
 
-          <Reveal delay={1200} className="!duration-1000">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight translate-y-12">
-              Built for comfort.
-              <br />
-              Styled for the street.
-            </h1>
-          </Reveal>
+      {/* Content */}
+      <section className="relative z-10 w-full px-6 max-w-7xl mx-auto flex flex-col items-center text-center pt-24">
+        <Reveal delay={200} className="!duration-1000">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-kanit font-black leading-[0.9] tracking-tighter uppercase mb-4">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-500 drop-shadow-2xl">
+              Cloud
+            </span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600 drop-shadow-2xl">
+              Kicks
+            </span>
+          </h1>
+        </Reveal>
 
-          <Reveal delay={2000} className="mt-6 !duration-1000">
-            <p className="text-base md:text-lg text-white/70 max-w-[680px] mx-auto leading-relaxed translate-y-12">
-              Designed to feel different.
-            </p>
-          </Reveal>
+        <Reveal delay={600} className="mt-8 !duration-1000">
+          <p className="text-lg md:text-2xl text-neutral-300 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
+            Step into the future of comfort. <br className="hidden md:block" />
+            Engineered for the streets, designed for the clouds.
+          </p>
+        </Reveal>
 
-          <Reveal delay={2800} className="mt-24 flex items-center justify-center !duration-1000">
-            <Link
-              href="/shop"
-              className="group relative flex items-center justify-center px-8 py-3 rounded-full bg-white/10 backdrop-blur-md text-white font-signika font-semibold text-base uppercase tracking-widest transition-all duration-500 hover:scale-110 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-95 animate-float overflow-hidden"
+        <Reveal delay={1000} className="mt-16 flex items-center justify-center !duration-1000">
+          <Link
+            href="/shop"
+            className="group relative px-8 py-4 rounded-full bg-white/5 backdrop-blur-md overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_50px_rgba(255,255,255,0.2)]"
+          >
+            {/* Animated Border */}
+            <div
+              className="absolute inset-0 rounded-full p-[2px] pointer-events-none"
+              style={{
+                mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                maskComposite: 'exclude',
+                WebkitMaskComposite: 'xor'
+              }}
             >
-              {/* Moving Border */}
-              <div
-                className="absolute inset-0 rounded-full p-[2px] pointer-events-none"
-                style={{
-                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                  maskComposite: 'exclude',
-                  WebkitMaskComposite: 'xor'
-                }}
-              >
-                <div className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0%,#ffffff_25%,transparent_50%)] animate-[spin_2s_linear_infinite]" />
-              </div>
+              <div className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0%,#ffffff_40%,transparent_50%)] animate-[spin_3s_linear_infinite]" />
+            </div>
 
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent bg-[length:200%_auto] animate-shine" />
-              <span className="relative z-10">Shop Now</span>
-            </Link>
-          </Reveal>
+            {/* Shimmer Effect */}
+            <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0" />
 
-        </div>
+            {/* Content */}
+            <span className="relative z-10 text-4xl font-kanit font-bold tracking-[0.2em] uppercase cloud-text">
+              Shop the Drop
+            </span>
+          </Link>
+        </Reveal>
       </section>
     </div>
   );

@@ -3,10 +3,11 @@
 import React from "react";
 import LiquidEther from './LiquidEther';
 import Reveal from "./reveal";
+import CTAButton from "./cta-button";
 
 const Newsletter: React.FC = () => {
     return (
-        <section className="relative w-full bg-neutral-900 px-6 pt-24 pb-28 -mt-16 text-white font-inter font-bold overflow-hidden">
+        <section className="relative w-full bg-black px-6 pt-24 pb-28 -mt-16 text-white font-inter font-bold overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <LiquidEther
                     colors={['#FFFFFF', '#F0F0F0', '#E0E0E0']}
@@ -44,14 +45,9 @@ const Newsletter: React.FC = () => {
                                 className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all backdrop-blur-sm"
                             />
                         </div>
-                        <button
-                            type="submit"
-                            className="group relative w-full md:w-auto px-10 py-4 rounded-full bg-white text-neutral-900 font-bold transition-all duration-500 hover:scale-110 hover:drop-shadow-[0_10px_40px_rgba(255,255,255,0.6)] active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-                        >
-                            <span className="absolute top-0 left-6 w-8 h-8 bg-white rounded-full transition-all duration-500 scale-0 group-hover:scale-[1.5] group-hover:-translate-y-2" />
-                            <span className="absolute top-0 right-6 w-8 h-8 bg-white rounded-full transition-all duration-500 delay-75 scale-0 group-hover:scale-[1.8] group-hover:-translate-y-3" />
-                            <span className="relative z-10">Join</span>
-                        </button>
+                        <CTAButton type="submit" variant="primary" className="w-full md:w-auto shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                            Join
+                        </CTAButton>
                     </form>
 
                     <p className="mt-4 text-xs text-gray-500 font-normal">

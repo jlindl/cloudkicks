@@ -8,6 +8,7 @@
     --animate-shine: shine 8s linear infinite;
     --animate-sway: sway 15s ease-in-out infinite;
     --animate-float: float 6s ease-in-out infinite;
+    --animate-cloud-move: cloud-move 60s linear infinite;
 
     @keyframes shine {
         0% {
@@ -44,6 +45,26 @@
             transform: translateY(-20px);
         }
     }
+
+    @keyframes cloud-move {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
 }
 
 :root {
@@ -53,7 +74,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
+        --background: #000000;
         --foreground: #ededed;
     }
 }
@@ -82,5 +103,31 @@ body {
 
     100% {
         transform: translateY(-50%);
+    }
+}
+
+.cloud-text {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(165, 180, 252, 0.2);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+    animation: fog-pulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes fog-pulse {
+    0% {
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2)) blur(0px);
+        opacity: 0.9;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.6)) blur(1px);
+        opacity: 1;
     }
 }

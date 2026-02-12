@@ -36,12 +36,23 @@ export default async function ProductShowcase() {
         console.error("Failed to fetch products:", error);
     }
 
+    console.log("ProductShowcase: Products found:", products.length);
     if (products.length === 0) {
-        return null;
+        console.log("ProductShowcase: No products found. Env:", process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN ? "Set" : "Unset");
+    }
+
+    if (products.length === 0) {
+        return (
+            <section className="w-full bg-black px-6 py-24 text-white font-inter font-bold">
+                <div className="mx-auto max-w-7xl text-center">
+                    <p className="text-red-500">No products found. (Debug Mode)</p>
+                </div>
+            </section>
+        );
     }
 
     return (
-        <section className="w-full bg-neutral-900 px-6 py-24 text-white font-inter font-bold">
+        <section className="w-full bg-black px-6 py-24 text-white font-inter font-bold">
             <div className="mx-auto max-w-7xl">
 
                 <div className="mb-12 max-w-3xl">

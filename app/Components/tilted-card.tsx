@@ -35,7 +35,7 @@ export default function TiltedCard({
     overlayContent = null,
     displayOverlayContent = false,
     children,
-    containerClass = "bg-neutral-900",
+    containerClass = "bg-black",
 }: TiltedCardProps & { containerClass?: string }) {
     const ref = useRef<HTMLDivElement>(null);
     const [rotateX, setRotateX] = useState(0);

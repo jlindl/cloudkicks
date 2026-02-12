@@ -4,18 +4,27 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./reveal";
 import { useCart } from "../contexts/cart-context";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, Instagram } from "lucide-react";
 
 export default function Header() {
-  const { openCart, cart } = useCart();
+  const { openCart, cart, totalQuantity } = useCart();
 
   return (
     <Reveal className="w-full" delay={100}>
       <div className="mx-auto max-w-4xl px-4 py-2">
         <div className="relative flex items-center justify-between rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-4 py-1 shadow-lg">
 
-          {/* Left Side - Browse Button */}
-          <div className="flex flex-1 items-center justify-end">
+          {/* Left Side - Instagram & Browse */}
+          <div className="flex flex-1 items-center justify-between">
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              className="group relative p-2 text-white/70 hover:text-white transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-5 w-5" />
+              <span className="absolute bottom-1 left-1 right-1 h-px bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </Link>
             <div className="hidden md:block">
               <Link
                 href="/shop"
@@ -106,9 +115,9 @@ export default function Header() {
               >
                 <div className="relative">
                   <ShoppingBag className="h-5 w-5" />
-                  {cart && cart.lines.edges.length > 0 && (
-                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">
-                      {cart.lines.edges.reduce((acc: number, { node }: { node: any }) => acc + node.quantity, 0)}
+                  {totalQuantity > 0 && (
+                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-[10px] font-bold text-white shadow-lg">
+                      {totalQuantity}
                     </span>
                   )}
                 </div>

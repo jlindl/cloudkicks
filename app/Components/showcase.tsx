@@ -4,7 +4,7 @@ import TiltedCard from "./tilted-card";
 
 const Showcase: React.FC = () => {
   return (
-    <section className="w-full bg-neutral-900 px-6 py-24 text-white font-inter font-bold">
+    <section className="w-full bg-black px-6 py-24 text-white font-inter font-bold">
       <div className="mx-auto max-w-7xl">
 
         <div className="mb-12 max-w-3xl">
@@ -20,9 +20,9 @@ const Showcase: React.FC = () => {
         <div className="grid gap-6 md:grid-cols-3">
           <Reveal delay={60} className="w-full h-full aspect-[4/5]">
             <TiltedCard
-              imageSrc="/assets/showcase1.png"
-              altText="All-day comfort"
-              captionText=""
+              imageSrc="/assets/variant_gold.png"
+              altText="Golden Sands"
+              captionText="Luxury Edition"
               containerHeight="100%"
               containerWidth="100%"
               imageHeight="100%"
@@ -36,7 +36,7 @@ const Showcase: React.FC = () => {
                 <>
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
                   <div className="absolute top-4 right-4 text-xl text-white/70 transition">+</div>
-                  <div className="absolute bottom-4 left-4"><p className="text-sm text-white/90 font-medium">All-day comfort</p></div>
+                  <div className="absolute bottom-4 left-4"><p className="text-sm text-white/90 font-medium">Golden Sands</p></div>
                 </>
               }
             />
@@ -44,9 +44,9 @@ const Showcase: React.FC = () => {
 
           <Reveal delay={120} className="w-full h-full aspect-[4/5]">
             <TiltedCard
-              imageSrc="/assets/showcase12.png"
-              altText="Lightweight design"
-              captionText=""
+              imageSrc="/assets/variant_stealth.png"
+              altText="Stealth Ops"
+              captionText="Triple Black"
               containerHeight="100%"
               containerWidth="100%"
               imageHeight="100%"
@@ -60,7 +60,7 @@ const Showcase: React.FC = () => {
                 <>
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
                   <div className="absolute top-4 right-4 text-xl text-white/70 transition">+</div>
-                  <div className="absolute bottom-4 left-4"><p className="text-sm text-white/90 font-medium">Lightweight design</p></div>
+                  <div className="absolute bottom-4 left-4"><p className="text-sm text-white/90 font-medium">Stealth Ops</p></div>
                 </>
               }
             />
@@ -68,9 +68,9 @@ const Showcase: React.FC = () => {
 
           <Reveal delay={180} className="w-full h-full aspect-[4/5]">
             <TiltedCard
-              imageSrc=""
-              altText="Minimal, versatile style"
-              captionText=""
+              imageSrc="/assets/variant_forest.png"
+              altText="Deep Forest"
+              captionText="Nature Series"
               containerHeight="100%"
               containerWidth="100%"
               imageHeight="100%"
@@ -81,15 +81,13 @@ const Showcase: React.FC = () => {
               showTooltip={false}
               displayOverlayContent={true}
               overlayContent={
-                <div className="w-full h-full bg-neutral-800 relative">
+                <div className="w-full h-full relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
                   <div className="absolute top-4 right-4 text-xl text-white/70 transition">+</div>
-                  <div className="absolute bottom-4 left-4"><p className="text-sm text-white/90 font-medium">Minimal, versatile style</p></div>
+                  <div className="absolute bottom-4 left-4"><p className="text-sm text-white/90 font-medium">Deep Forest</p></div>
                 </div>
               }
-            >
-              <div className="w-full h-full bg-neutral-800" />
-            </TiltedCard>
+            />
           </Reveal>
         </div>
       </div>
