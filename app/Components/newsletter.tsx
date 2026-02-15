@@ -1,11 +1,45 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import LiquidEther from './LiquidEther';
 import Reveal from "./reveal";
 import CTAButton from "./cta-button";
 
 const Newsletter: React.FC = () => {
+    const [email, setEmail] = useState("");
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [message, setMessage] = useState("");
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!email) return;
+
+        setStatus("loading");
+        setMessage("");
+
+        try {
+            const response = await fetch("/api/newsletter", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email }),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                setMessage("Welcome to the cloud!");
+                setEmail("");
+            } else {
+                setStatus("error");
+                setMessage("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            setStatus("error");
+            setMessage("Something went wrong. Please try again.");
+        }
+    };
+
     return (
         <section className="relative w-full bg-black px-6 pt-24 pb-28 -mt-16 text-white font-inter font-bold overflow-hidden">
             <div className="absolute inset-0 z-0">
@@ -37,18 +71,32 @@ const Newsletter: React.FC = () => {
                         Join the CloudKicks community for exclusive drops, discounts, and early access to new products.
                     </p>
 
-                    <form className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
+                    <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
                         <div className="w-full relative">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
-                                className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all backdrop-blur-sm"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                disabled={status === "loading"}
+                                className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all backdrop-blur-sm disabled:opacity-50"
                             />
                         </div>
-                        <CTAButton type="submit" variant="primary" className="w-full md:w-auto shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-                            Join
+                        <CTAButton
+                            type="submit"
+                            variant="primary"
+                            className="w-full md:w-auto shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                            disabled={status === "loading"}
+                        >
+                            {status === "loading" ? "Joining..." : "Join"}
                         </CTAButton>
                     </form>
+
+                    {message && (
+                        <p className={`mt-4 text-sm font-medium ${status === "success" ? "text-green-400" : "text-red-400"}`}>
+                            {message}
+                        </p>
+                    )}
 
                     <p className="mt-4 text-xs text-gray-500 font-normal">
                         By subscribing to our newsletter, you agree to our Terms and Privacy Policy. Opt out anytime.
