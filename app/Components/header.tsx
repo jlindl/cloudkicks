@@ -17,7 +17,7 @@ export default function Header() {
           {/* Left Side - Instagram & Browse */}
           <div className="flex flex-1 items-center justify-between">
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/cloudkicks.store/"
               target="_blank"
               className="group relative p-2 text-white/70 hover:text-white transition-colors duration-300"
               aria-label="Instagram"
@@ -31,7 +31,7 @@ export default function Header() {
                 className="group relative px-4 py-2 text-base font-bold transition-colors duration-300"
               >
                 <span className="bg-[linear-gradient(110deg,#a3a3a3,45%,#ffffff,55%,#a3a3a3)] bg-[length:200%_100%] bg-clip-text text-transparent animate-shine">
-                  Browse the range
+                  Shop Now
                 </span>
                 <span className="absolute bottom-0 left-0 right-0 h-px bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
@@ -116,7 +116,7 @@ export default function Header() {
                 <div className="relative">
                   <ShoppingBag className="h-5 w-5" />
                   {totalQuantity > 0 && (
-                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-[10px] font-bold text-white shadow-lg">
+                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-white text-black text-[10px] font-bold shadow-lg">
                       {totalQuantity}
                     </span>
                   )}
@@ -128,6 +128,6 @@ export default function Header() {
 
         </div>
       </div>
-    </Reveal>
+    </Reveal >
   );
 }

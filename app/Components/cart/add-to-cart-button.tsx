@@ -29,7 +29,7 @@ export default function AddToCartButton({ variantId }: { variantId: string }) {
             className={`
                 relative w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 transition-all overflow-hidden
                 ${status === "success"
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-white text-black hover:bg-neutral-200"
                     : status === "loading"
                         ? "bg-neutral-800 text-neutral-400 cursor-not-allowed"
                         : "bg-white text-black hover:bg-neutral-200"

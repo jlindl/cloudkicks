@@ -2,6 +2,7 @@ import React from "react";
 import Reveal from "./reveal";
 import TiltedCard from "./tilted-card";
 import CTAButton from "./cta-button";
+import HeroCTA from "./hero-cta";
 
 const Showcase2: React.FC = () => {
   return (
@@ -27,9 +28,7 @@ const Showcase2: React.FC = () => {
             </p>
 
             <div className="relative z-10 mt-10">
-              <CTAButton href="/shop" variant="primary" showArrow={true}>
-                Explore Collection
-              </CTAButton>
+              <HeroCTA mainText="Secure Your Pair" revealText="Buy Now" link="/shop" />
             </div>
           </div>
         </Reveal>

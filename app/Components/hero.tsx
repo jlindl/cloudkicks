@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./reveal";
 import LightRays from "./lightrays";
+import HeroCTA from "./hero-cta";
 import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
@@ -64,31 +65,7 @@ const Hero: React.FC = () => {
         </Reveal>
 
         <Reveal delay={1000} className="mt-16 flex items-center justify-center !duration-1000">
-          <Link
-            href="/shop"
-            className="group relative px-8 py-4 rounded-full bg-white/5 backdrop-blur-md overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_50px_rgba(255,255,255,0.2)]"
-          >
-            {/* Animated Border */}
-            <div
-              className="absolute inset-0 rounded-full p-[2px] pointer-events-none"
-              style={{
-                mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                maskComposite: 'exclude',
-                WebkitMaskComposite: 'xor'
-              }}
-            >
-              <div className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0%,#ffffff_40%,transparent_50%)] animate-[spin_3s_linear_infinite]" />
-            </div>
-
-            {/* Shimmer Effect */}
-            <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0" />
-
-            {/* Content */}
-            <span className="relative z-10 text-4xl font-kanit font-bold tracking-[0.2em] uppercase cloud-text">
-              Shop the Drop
-            </span>
-          </Link>
+          <HeroCTA link="/shop" />
         </Reveal>
       </section>
     </div>

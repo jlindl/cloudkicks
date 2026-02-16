@@ -17,7 +17,7 @@ export default function CloudButton({ text, href }: CloudButtonProps) {
             {/* SVG Cloud Shape */}
             <svg
                 viewBox="0 0 200 80"
-                className="absolute inset-0 h-full w-full fill-white/10 stroke-white/20 stroke-[1.5] transition-all duration-300 group-hover:fill-white/20 group-hover:stroke-emerald-400 group-hover:drop-shadow-[0_0_8px_rgba(52,211,153,0.5)]"
+                className="absolute inset-0 h-full w-full fill-white/10 stroke-white/20 stroke-[1.5] transition-all duration-300 group-hover:fill-white/20 group-hover:stroke-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
                 preserveAspectRatio="none"
             >
                 <path

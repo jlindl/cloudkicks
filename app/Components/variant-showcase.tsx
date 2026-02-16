@@ -69,7 +69,7 @@ const VariantShowcase: React.FC = () => {
                                                 <h3 className="text-xl font-bold text-white">{variant.name}</h3>
                                                 <p className="text-sm text-neutral-400">{variant.color}</p>
                                             </div>
-                                            <p className="text-lg font-mono text-emerald-400">{variant.price}</p>
+                                            <p className="text-lg font-mono text-white">{variant.price}</p>
                                         </div>
                                         <p className="text-sm text-gray-300 font-light leading-relaxed mb-4">
                                             {variant.description}

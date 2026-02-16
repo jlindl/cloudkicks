@@ -93,7 +93,7 @@ const Newsletter: React.FC = () => {
                     </form>
 
                     {message && (
-                        <p className={`mt-4 text-sm font-medium ${status === "success" ? "text-green-400" : "text-red-400"}`}>
+                        <p className={`mt-4 text-sm font-medium ${status === "success" ? "text-white" : "text-red-400"}`}>
                             {message}
                         </p>
                     )}
