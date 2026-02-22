@@ -2,7 +2,7 @@ import { client } from "../../lib/shopify";
 import { GET_PRODUCTS_QUERY } from "../../lib/shopify/queries";
 import ShopGridClient from "../Components/shop/shop-grid-client";
 import ScrollReveal from "../Components/reveal";
-import AnimatedGlows from "../Components/animated-glows"; // We will inline the glows effect if it doesn't exist, but creating a clean component is better practice. Let's inline for safety given context constraints.
+
 
 export const revalidate = 60; // Revalidate every minute
 
