@@ -1,7 +1,7 @@
 import { client } from "../../lib/shopify";
 import { GET_PRODUCTS_QUERY } from "../../lib/shopify/queries";
 import ShopGridClient from "../Components/shop/shop-grid-client";
-import ScrollReveal from "../Components/reveal";
+import ScrollReveal from "../Components/scroll-reveal";
 
 
 export const revalidate = 60; // Revalidate every minute
