@@ -34,7 +34,11 @@ export const GET_PRODUCT_BY_HANDLE_QUERY = `
       title
       handle
       description
-      images(first: 5) {
+      options {
+        name
+        values
+      }
+      images(first: 20) {
         edges {
           node {
             url
@@ -42,11 +46,16 @@ export const GET_PRODUCT_BY_HANDLE_QUERY = `
           }
         }
       }
-      variants(first: 10) {
+      variants(first: 20) {
         edges {
           node {
             id
             title
+            availableForSale
+            selectedOptions {
+              name
+              value
+            }
             price {
               amount
               currencyCode

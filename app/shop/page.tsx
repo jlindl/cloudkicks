@@ -1,8 +1,8 @@
 import { client } from "../../lib/shopify";
 import { GET_PRODUCTS_QUERY } from "../../lib/shopify/queries";
-import Link from "next/link";
-import Image from "next/image";
-import Reveal from "../Components/reveal";
+import ShopGridClient from "../Components/shop/shop-grid-client";
+import ScrollReveal from "../Components/reveal";
+import AnimatedGlows from "../Components/animated-glows"; // We will inline the glows effect if it doesn't exist, but creating a clean component is better practice. Let's inline for safety given context constraints.
 
 export const revalidate = 60; // Revalidate every minute
 
@@ -18,65 +18,44 @@ export default async function ShopPage() {
     }
 
     return (
-        <div className="min-h-screen bg-black font-inter text-white pt-32 pb-24 relative overflow-hidden">
-            {/* Ambient Gradients sticking to corners */}
-            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="min-h-screen bg-black font-inter text-white pt-32 pb-32 relative overflow-hidden">
+            {/* Immersive Animated Background Glows */}
+            <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-white/5 blur-[200px] rounded-full pointer-events-none opacity-60 animate-[sway_20s_ease-in-out_infinite] transform-gpu" />
+            <div className="absolute bottom-40 left-0 w-[60vw] h-[60vw] bg-white/5 blur-[150px] rounded-full pointer-events-none opacity-40 animate-[float_15s_ease-in-out_infinite_reverse] transform-gpu" />
 
-            <div className="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
+            <div className="mx-auto max-w-7xl px-6 relative z-10">
 
-                <Reveal>
-                    <div className="flex flex-col items-center text-center mb-16">
-                        <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase border border-white/20 rounded-full text-white/60">
-                            The Collection
-                        </span>
-                        <h1 className="text-5xl md:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50">
-                            ALL RELEASES
+                {/* Cinematic Header Section */}
+                <div className="flex flex-col items-center justify-center text-center mt-12 mb-24 min-h-[30vh]">
+                    <ScrollReveal duration={1} distance={40}>
+                        <div className="inline-flex items-center gap-3 px-4 py-2 border border-white/10 bg-white/5 backdrop-blur-md rounded-full mb-8">
+                            <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white/80">
+                                Official Collection
+                            </span>
+                        </div>
+                    </ScrollReveal>
+
+                    <ScrollReveal duration={1} delay={0.2} distance={30}>
+                        <h1 className="text-7xl md:text-8xl lg:text-[9rem] font-kanit font-black leading-[0.85] tracking-tighter uppercase relative group">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-200 to-neutral-800 drop-shadow-2xl">
+                                THE ARCHIVE
+                            </span>
+                            {/* Animated Shine Pass */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent bg-[length:200%_auto] bg-clip-text text-transparent opacity-0 mix-blend-screen animate-[shine_5s_linear_infinite]" />
                         </h1>
-                    </div>
-                </Reveal>
+                    </ScrollReveal>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {products.map(({ node }: { node: any }) => (
-                        <Reveal key={node.handle} className="group flex flex-col gap-4">
-                            <Link href={`/products/${node.handle}`} className="relative aspect-square overflow-hidden rounded-3xl bg-white/5 border border-white/10 transition-colors hover:border-white/30">
-                                {node.images.edges[0] && (
-                                    <Image
-                                        src={node.images.edges[0].node.url}
-                                        alt={node.images.edges[0].node.altText || node.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
-                                )}
-                                {/* Hover Overlay */}
-                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                                    <span className="px-4 py-2 bg-white text-black text-sm font-bold rounded-full">
-                                        View Item
-                                    </span>
-                                </div>
-                            </Link>
-
-                            <div className="flex justify-between items-start px-2">
-                                <div>
-                                    <h3 className="text-lg font-bold text-white group-hover:text-white/80 transition-colors">
-                                        {node.title}
-                                    </h3>
-                                    <p className="text-sm text-neutral-400 line-clamp-1">{node.description}</p>
-                                </div>
-                                <div className="text-right">
-                                    <p className="text-lg font-mono text-white">
-                                        {node.priceRange.minVariantPrice.amount}
-                                        <span className="text-xs text-neutral-500 ml-1">
-                                            {node.priceRange.minVariantPrice.currencyCode}
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </Reveal>
-                    ))}
+                    <ScrollReveal duration={1} delay={0.4} distance={20}>
+                        <p className="mt-8 text-neutral-400 max-w-2xl mx-auto text-lg md:text-xl font-light tracking-wide">
+                            Explore our complete lineup of engineered comfort. Built for the streets, designed for the clouds.
+                        </p>
+                    </ScrollReveal>
                 </div>
+
+                {/* Interactive Client Grid */}
+                <ShopGridClient products={products} />
+
             </div>
         </div>
     );

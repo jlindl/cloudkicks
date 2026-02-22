@@ -10,7 +10,7 @@ export default async function DynamicShowcase() {
                 first: 5,
             },
         });
-        products = data.products.edges;
+        products = data?.products?.edges ?? [];
     } catch (error) {
         console.error("Error fetching products:", error);
         return null;

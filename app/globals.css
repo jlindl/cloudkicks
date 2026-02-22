@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Global smooth scrolling */
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 @theme {
     --font-kanit: var(--font-kanit);
     --font-inter: var(--font-inter);
