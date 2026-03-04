@@ -13,7 +13,7 @@ interface HeroCTAProps {
 
 const HeroCTA: React.FC<HeroCTAProps> = ({
     mainText = "Shop the Drop",
-    revealText = "Explore Now",
+    revealText = "JOIN THE CLOUD",
     link = "/shop"
 }) => {
     const ref = useRef<HTMLDivElement>(null);
@@ -68,7 +68,7 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
                 />
 
                 {/* Button Container */}
-                <div className="relative px-8 py-4 md:px-12 md:py-6 rounded-full overflow-hidden bg-black border border-white/20 backdrop-blur-md transition-colors duration-500 group-hover:border-white/50">
+                <div className="relative w-[220px] h-[60px] md:w-[320px] md:h-[80px] flex justify-center flex-col items-center rounded-full overflow-hidden bg-black border border-white/20 backdrop-blur-md transition-colors duration-500 group-hover:border-white/50">
 
                     {/* Liquid Gradient Background */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -76,22 +76,22 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
                     </div>
 
                     {/* Text Reveal Container */}
-                    <div className="relative z-10 flex flex-col items-center justify-center h-6 overflow-hidden">
+                    <div className="relative z-10 flex flex-col items-center justify-center w-full h-6 md:h-8 overflow-hidden">
                         {/* Primary Text */}
                         <motion.span
-                            animate={{ y: isHovered ? -30 : 0, color: isHovered ? "#000000" : "#ffffff" }}
+                            animate={{ y: isHovered ? -40 : 0, color: isHovered ? "#000000" : "#ffffff" }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="text-lg md:text-2xl font-black uppercase tracking-[0.2em] whitespace-nowrap"
+                            className="block text-sm md:text-lg font-black uppercase tracking-[0.2em] whitespace-nowrap"
                         >
                             {mainText}
                         </motion.span>
 
                         {/* Hidden Reveal Text */}
                         <motion.span
-                            initial={{ y: 30 }}
-                            animate={{ y: isHovered ? -24 : 30 }}
+                            initial={{ y: 40 }}
+                            animate={{ y: isHovered ? 0 : 40 }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="absolute text-lg md:text-2xl font-black text-black uppercase tracking-[0.2em] whitespace-nowrap flex items-center gap-3"
+                            className="absolute inset-0 flex items-center justify-center text-sm md:text-lg font-black text-black uppercase tracking-[0.2em] whitespace-nowrap gap-3"
                         >
                             {revealText} <ArrowRight className="w-5 h-5 text-black" />
                         </motion.span>

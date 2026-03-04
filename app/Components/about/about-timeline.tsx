@@ -61,10 +61,10 @@ export default function AboutTimeline() {
 
                             {/* Card */}
                             <div className="bg-white/[0.02] backdrop-blur-2xl border border-white/5 rounded-3xl p-10 md:p-14 transition-all duration-500 hover:bg-white/[0.06] hover:border-white/20 group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
-                                <div className="text-6xl md:text-8xl font-black font-kanit text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10 mb-6 drop-shadow-md transition-all duration-500 group-hover:from-sky-300 group-hover:to-sky-400/20">
+                                <div className="text-6xl md:text-8xl font-black font-kanit text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10 mb-6 drop-shadow-md transition-all duration-500 group-hover:from-white group-hover:to-white/20">
                                     {milestone.year}
                                 </div>
-                                <h3 className="text-2xl md:text-4xl font-bold text-white mb-4 group-hover:text-sky-300 transition-colors duration-500">
+                                <h3 className="text-2xl md:text-4xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-500">
                                     {milestone.title}
                                 </h3>
                                 <p className="text-neutral-400 text-lg md:text-xl font-light leading-relaxed group-hover:text-neutral-200 transition-colors duration-500">
@@ -79,7 +79,7 @@ export default function AboutTimeline() {
                 {/* Progress Line */}
                 <div className="absolute bottom-24 left-0 w-full h-[1px] bg-white/5 z-20">
                     <motion.div
-                        className="h-full bg-gradient-to-r from-sky-400 via-sky-200 to-white origin-left shadow-[0_0_20px_rgba(56,189,248,0.8)]"
+                        className="h-full bg-gradient-to-r from-white via-white/80 to-white origin-left shadow-[0_0_20px_rgba(255,255,255,0.8)]"
                         style={{ scaleX: smoothProgress }}
                     />
                 </div>

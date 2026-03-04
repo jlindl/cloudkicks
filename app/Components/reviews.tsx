@@ -115,10 +115,12 @@ const Reviews: React.FC = () => {
 
           <div className="mt-8 h-1 w-24 bg-gradient-to-r from-white/20 to-white/5 rounded-full" />
 
-          <p className="mt-8 text-lg text-gray-400 leading-relaxed font-light">
-            CloudKicks are worn daily by people who value pure comfort.
-            From relaxed days at home to stepping out, our community describes them as the only footwear they never want to take off.
-          </p>
+          <div className="mt-8 space-y-4 text-lg text-gray-400 leading-relaxed font-light">
+            <p>Not hype. Not exaggeration.</p>
+            <p>
+              From slow mornings to late link-ups, the feedback is the same. Comfort that feels different. A silhouette that stands out without trying.
+            </p>
+          </div>
 
           <div className="mt-10 grid grid-cols-3 gap-8 border-t border-white/10 pt-8">
             <div>

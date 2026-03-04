@@ -65,20 +65,20 @@ const Hero: React.FC = () => {
         className="relative z-10 w-full px-6 max-w-7xl mx-auto flex flex-col items-center text-center pt-24 will-change-transform"
       >
         <ScrollReveal delay={0.1} duration={1} direction="up" distance={50} blur>
-          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-kanit font-black leading-[0.85] tracking-[0.02em] uppercase mb-4 mix-blend-screen relative z-10">
+          <h1 className="text-5xl md:text-7xl lg:text-[8rem] font-kanit font-black leading-[0.85] tracking-[0.02em] uppercase mb-4 mix-blend-screen relative z-10">
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 drop-shadow-2xl">
-              Cloud
+              STREETWEAR
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 via-white to-neutral-500 bg-[length:200%_auto] animate-[shine_4s_linear_infinite] drop-shadow-2xl">
-              Kicks
+              MEETS COMFORT.
             </span>
           </h1>
         </ScrollReveal>
 
         <ScrollReveal delay={0.4} duration={1} direction="up" distance={30} blur>
           <p className="text-lg md:text-2xl text-neutral-300 max-w-2xl mx-auto font-light tracking-wide leading-relaxed mt-6">
-            Step into the future of comfort. <br className="hidden md:block" />
-            Engineered for the streets, designed for the clouds.
+            Streetwear energy. <br className="hidden md:block" />
+            Slipper comfort. No compromise.
           </p>
         </ScrollReveal>
 

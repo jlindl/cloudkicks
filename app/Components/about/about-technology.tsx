@@ -39,53 +39,48 @@ export default function AboutTechnology() {
 
                     {/* Progress Track */}
                     <div className="absolute left-6 md:left-12 top-1/4 bottom-1/4 w-[2px] bg-white/5 hidden md:block rounded-full">
-                        <motion.div style={{ height: progressBarY }} className="w-full bg-sky-400 rounded-full shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
+                        <motion.div style={{ height: progressBarY }} className="w-full bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
                     </div>
 
                     <div className="w-full max-w-sm relative h-[400px] flex items-center ml-0 md:ml-8">
 
                         {/* Content 1: Sole */}
                         <motion.div style={{ opacity: t1Opacity, y: t1Y }} className="absolute inset-0 flex flex-col justify-center">
-                            <span className="text-[10px] md:text-xs font-mono tracking-[0.3em] uppercase text-white/50 mb-6">Component 01</span>
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9] mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-neutral-500">
-                                Zero<br />Impact<br />Matrix.
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-neutral-500 pr-4">
+                                FROM LOUNGE<br />TO LINK-UP.
                             </h2>
-                            <p className="text-neutral-400 font-light leading-relaxed text-sm md:text-base">
-                                The <strong>CloudFloat™ Sole</strong> isn't just foam. It is an engineered translucent polymer matrix containing microscopic vacuum chambers. Upon impact, the chambers dissipate kinetic energy laterally rather than vertically.
-                            </p>
-
-                            <ul className="mt-8 space-y-3 border-t border-white/10 pt-6">
-                                <li className="flex justify-between items-center text-xs font-mono uppercase text-white/60">
-                                    <span>Energy Return</span>
-                                    <span className="text-white">98.4%</span>
-                                </li>
-                                <li className="flex justify-between items-center text-xs font-mono uppercase text-white/60">
-                                    <span>Matrix Density</span>
-                                    <span className="text-white">0.2g/cm³</span>
-                                </li>
-                            </ul>
+                            <div className="space-y-4 text-neutral-400 font-light leading-relaxed text-sm md:text-base pr-4">
+                                <p>
+                                    Not just for staying in. Not just for stepping out.
+                                </p>
+                                <p>
+                                    CloudKicks bridge comfort and streetwear in one oversized silhouette. A statement shape softened with plush materials and everyday cushioning.
+                                </p>
+                                <p>
+                                    It is the pair you reach for without thinking. The one that works with whatever the day becomes.
+                                </p>
+                                <p className="text-white font-medium mt-6">
+                                    Comfort stays locked in. Style stays sharp.
+                                </p>
+                            </div>
                         </motion.div>
 
                         {/* Content 2: Mesh */}
                         <motion.div style={{ opacity: t2Opacity, y: t2Y }} className="absolute inset-0 flex flex-col justify-center pointer-events-none">
-                            <span className="text-[10px] md:text-xs font-mono tracking-[0.3em] uppercase text-sky-400/50 mb-6">Component 02</span>
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9] mb-8 bg-clip-text text-transparent bg-gradient-to-r from-sky-300 to-sky-700 drop-shadow-sm">
-                                Adaptive<br />Aero<br />Weave.
+                            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-neutral-500 drop-shadow-sm pr-4">
+                                DESIGNED<br />WITH<br />INTENT.
                             </h2>
-                            <p className="text-neutral-400 font-light leading-relaxed text-sm md:text-base">
-                                Utilizing extreme macro-woven structural fibers interlaced with highly reactive neon-luminescent polymers. The <strong>AeroWeave Mesh</strong> actively responds to foot temperature and flex, adjusting its tensile strength.
-                            </p>
-
-                            <ul className="mt-8 space-y-3 border-t border-sky-400/10 pt-6">
-                                <li className="flex justify-between items-center text-xs font-mono uppercase text-sky-200/60">
-                                    <span>Tensile Strength</span>
-                                    <span className="text-sky-300">4,500 MPa</span>
-                                </li>
-                                <li className="flex justify-between items-center text-xs font-mono uppercase text-sky-200/60">
-                                    <span>Thermal Venting</span>
-                                    <span className="text-sky-300">Active</span>
-                                </li>
-                            </ul>
+                            <div className="space-y-4 text-neutral-400 font-light leading-relaxed text-sm md:text-base pr-4">
+                                <p>
+                                    Every line. Every proportion. Every material choice.
+                                </p>
+                                <p>
+                                    CloudKicks aren’t accidental. The oversized stance, the cushioned interior, the clean finish. It is built to feel effortless and look deliberate.
+                                </p>
+                                <p className="text-white font-medium mt-6">
+                                    Because comfort should still carry weight.
+                                </p>
+                            </div>
                         </motion.div>
 
                     </div>

@@ -56,7 +56,7 @@ const BentoCard = ({ title, value, desc, colSpan, rowSpan }: BentoCardProps) => 
 
             <div className="relative z-10">
                 <p className="text-white/40 font-mono text-sm tracking-widest uppercase mb-4">{title}</p>
-                <div className="text-5xl md:text-7xl font-black font-kanit text-white mb-4 group-hover:text-sky-300 transition-colors duration-500">
+                <div className="text-5xl md:text-7xl font-black font-kanit text-white mb-4 group-hover:text-white transition-colors duration-500">
                     {value}
                 </div>
                 <p className="text-neutral-500 text-sm md:text-base font-light leading-relaxed max-w-xs group-hover:text-neutral-300 transition-colors duration-500">
@@ -72,7 +72,7 @@ export default function AboutBento() {
         <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#050505]">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-20 text-center md:text-left">
-                    <span className="text-sky-400 font-mono tracking-[0.4em] uppercase text-sm">The Foundry</span>
+                    <span className="text-white font-mono tracking-[0.4em] uppercase text-sm">The Foundry</span>
                     <h2 className="text-4xl md:text-6xl font-black font-kanit text-white uppercase tracking-tighter mt-4">By The Numbers</h2>
                 </div>
 
