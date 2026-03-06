@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+
 import Image from "next/image";
 import LightRays from "./lightrays";
 import HeroCTA from "./hero-cta";
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
         className="absolute inset-0 z-0 will-change-transform"
       >
         <Image
-          src="/assets/cloud_kicks_dark_hero.png"
+          src="/assets/image copy.png"
           alt="CloudKicks Hero Background"
           fill
           className="object-cover opacity-60"

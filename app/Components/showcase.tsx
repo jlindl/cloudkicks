@@ -21,15 +21,11 @@ const Showcase: React.FC = () => {
           <Reveal delay={60} className="w-full h-full aspect-[4/5]">
             <TiltedCard
               imageSrc="/assets/variant_gold.png"
-              altText="Golden Sands"
               captionText="Luxury Edition"
               containerHeight="100%"
               containerWidth="100%"
-              imageHeight="100%"
-              imageWidth="100%"
               rotateAmplitude={12}
               scaleOnHover={1.05}
-              showMobileWarning={false}
               showTooltip={false}
               displayOverlayContent={true}
               overlayContent={
@@ -45,15 +41,11 @@ const Showcase: React.FC = () => {
           <Reveal delay={120} className="w-full h-full aspect-[4/5]">
             <TiltedCard
               imageSrc="/assets/variant_stealth.png"
-              altText="Stealth Ops"
               captionText="Triple Black"
               containerHeight="100%"
               containerWidth="100%"
-              imageHeight="100%"
-              imageWidth="100%"
               rotateAmplitude={12}
               scaleOnHover={1.05}
-              showMobileWarning={false}
               showTooltip={false}
               displayOverlayContent={true}
               overlayContent={
@@ -69,15 +61,11 @@ const Showcase: React.FC = () => {
           <Reveal delay={180} className="w-full h-full aspect-[4/5]">
             <TiltedCard
               imageSrc="/assets/variant_forest.png"
-              altText="Deep Forest"
               captionText="Nature Series"
               containerHeight="100%"
               containerWidth="100%"
-              imageHeight="100%"
-              imageWidth="100%"
               rotateAmplitude={12}
               scaleOnHover={1.05}
-              showMobileWarning={false}
               showTooltip={false}
               displayOverlayContent={true}
               overlayContent={

@@ -1,42 +1,31 @@
 "use client";
-
 import React, { useRef, useState } from "react";
-
-// Types for the TiltedCard component
-interface TiltedCardProps {
-    imageSrc?: string;
-    altText?: string;
-    captionText?: string;
-    containerHeight?: string | number;
-    containerWidth?: string | number;
-    imageHeight?: string | number;
-    imageWidth?: string | number;
-    scaleOnHover?: number;
-    rotateAmplitude?: number;
-    showMobileWarning?: boolean;
-    showTooltip?: boolean;
-    overlayContent?: React.ReactNode;
-    displayOverlayContent?: boolean;
-    children?: React.ReactNode;
-}
 
 export default function TiltedCard({
     imageSrc,
-    altText = "Tilted card image",
     captionText = "",
     containerHeight = "300px",
     containerWidth = "100%",
-    imageHeight = "300px",
-    imageWidth = "300px",
     scaleOnHover = 1.1,
     rotateAmplitude = 14,
-    showMobileWarning = true,
     showTooltip = true,
     overlayContent = null,
     displayOverlayContent = false,
     children,
     containerClass = "bg-black",
-}: TiltedCardProps & { containerClass?: string }) {
+}: {
+    imageSrc?: string;
+    captionText?: string;
+    containerHeight?: string | number;
+    containerWidth?: string | number;
+    scaleOnHover?: number;
+    rotateAmplitude?: number;
+    showTooltip?: boolean;
+    overlayContent?: React.ReactNode;
+    displayOverlayContent?: boolean;
+    children?: React.ReactNode;
+    containerClass?: string
+}) {
     const ref = useRef<HTMLDivElement>(null);
     const [rotateX, setRotateX] = useState(0);
     const [rotateY, setRotateY] = useState(0);

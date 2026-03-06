@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
         });
 
         return NextResponse.json({ success: true });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Error appending to Google Sheet:', error);
         return NextResponse.json({ error: 'Failed to save email' }, { status: 500 });
     }

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { } from "framer-motion"; // Keeping for consistency or removing if empty
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProductImage {

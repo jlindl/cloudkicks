@@ -67,15 +67,11 @@ const Showcase2: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent blur-2xl rounded-full opacity-60" />
             <TiltedCard
               imageSrc="/assets/showcase_slipper.jpg"
-              altText="CloudKicks Slipper Detail"
               captionText="Engineered for Comfort"
               containerHeight="100%"
               containerWidth="100%"
-              imageHeight="100%"
-              imageWidth="100%"
               rotateAmplitude={20}
               scaleOnHover={1.1}
-              showMobileWarning={false}
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={

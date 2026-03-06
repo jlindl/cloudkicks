@@ -145,14 +145,14 @@ const Reviews: React.FC = () => {
             {/* Column 1 */}
             <div className="reviews-scroll space-y-6">
               {[...reviewsCol1, ...reviewsCol1, ...reviewsCol1].map((text, i) => (
-                <Review key={`c1-${i}`} text={text} index={i} />
+                <Review key={`c1-${i}`} text={text} />
               ))}
             </div>
 
             {/* Column 2 */}
             <div className="reviews-scroll-slower space-y-6 pt-12">
               {[...reviewsCol2, ...reviewsCol2, ...reviewsCol2].map((text, i) => (
-                <Review key={`c2-${i}`} text={text} index={i} />
+                <Review key={`c2-${i}`} text={text} />
               ))}
             </div>
 
@@ -162,16 +162,20 @@ const Reviews: React.FC = () => {
 
       {/* Animation CSS */}
       <style>{`
-        @keyframes verticalScroll {
+        @keyframes verticalScrollUp {
           0% { transform: translateY(0); }
           100% { transform: translateY(-33.33%); }
         }
+        @keyframes verticalScrollDown {
+          0% { transform: translateY(-33.33%); }
+          100% { transform: translateY(0); }
+        }
         .reviews-scroll {
-          animation: verticalScroll 45s linear infinite;
+          animation: verticalScrollUp 45s linear infinite;
           will-change: transform;
         }
         .reviews-scroll-slower {
-          animation: verticalScroll 60s linear infinite;
+          animation: verticalScrollDown 60s linear infinite;
           will-change: transform;
         }
         .reviews-scroll:hover, .reviews-scroll-slower:hover {
@@ -187,19 +191,15 @@ const Reviews: React.FC = () => {
   );
 };
 
-type ReviewProps = {
-  text: string;
-  index: number;
-};
 
-const Review = ({ text, index }: ReviewProps) => (
+
+const Review = ({ text }: { text: string }) => (
   <TiltedCard
     containerHeight="auto"
     containerWidth="100%"
     containerClass="relative bg-white/5 backdrop-blur-xl border border-white/5 rounded-2xl p-6 transition-all duration-500 group shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden cursor-pointer"
     rotateAmplitude={8}
     scaleOnHover={1.02}
-    showMobileWarning={false}
     showTooltip={false}
     displayOverlayContent={false}
   >
@@ -207,7 +207,7 @@ const Review = ({ text, index }: ReviewProps) => (
     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_var(--mouse-x,_50%)_var(--mouse-y,_50%),rgba(255,255,255,0.06)_0%,transparent_60%)]" />
     <div className="absolute inset-0 border border-transparent rounded-2xl [background:linear-gradient(45deg,rgba(255,255,255,0.1),transparent,rgba(255,255,255,0.05))_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] mask-composite-exclude opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
     <div className="relative">
-      <div className="absolute -top-2 -left-2 text-4xl text-white/5 font-serif">"</div>
+      <div className="absolute -top-2 -left-2 text-4xl text-white/5 font-serif">&quot;</div>
 
       <div className="flex items-center gap-1 mb-3 text-white/80 text-xs">
         {[1, 2, 3, 4, 5].map(s => <span key={s}>★</span>)}

@@ -93,18 +93,14 @@ export default function AboutTechnology() {
                     <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-30 pointer-events-none hidden md:block" />
                     <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent z-30 pointer-events-none block md:hidden" />
 
-                    {/* Image 1: The Sole */}
                     <motion.div
                         style={{ opacity: img1Opacity, scale: img1Scale }}
                         className="absolute inset-0 w-full h-full will-change-transform"
                     >
-                        <Image src="/assets/about_tech_sole.png" alt="Tech Sole Layout" fill className="object-cover" priority />
+                        <Image src="/assets/cloud_kicks_hero_final.png" alt="CloudKicks in Premium Lounge" fill className="object-cover" priority />
 
-                        {/* Tech Overlay Lines */}
-                        <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-black/20 to-black/80 mix-blend-multiply" />
-                        <div className="absolute top-1/3 left-1/4 w-[1px] h-32 bg-white/40 origin-bottom scale-y-[0.5]" />
-                        <div className="absolute top-[40%] right-1/4 w-32 h-[1px] bg-white/40 origin-left scale-x-[0.5]" />
-                        <div className="absolute top-[40%] right-1/4 w-2 h-2 bg-white rounded-full translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_white]" />
+                        {/* Branded Subtle Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </motion.div>
 
                     {/* Image 2: The Mesh */}

@@ -51,15 +51,11 @@ const VariantShowcase: React.FC = () => {
                         <Reveal key={variant.id} delay={index * 100} className="w-full h-full">
                             <TiltedCard
                                 imageSrc={variant.image}
-                                altText={variant.name}
                                 captionText=""
                                 containerHeight="450px"
                                 containerWidth="100%"
-                                imageHeight="350px"
-                                imageWidth="350px"
                                 rotateAmplitude={12}
                                 scaleOnHover={1.05}
-                                showMobileWarning={false}
                                 showTooltip={false}
                                 displayOverlayContent={true}
                                 overlayContent={

@@ -1000,7 +1000,7 @@ export default function LiquidEther({
         }
 
         class WebGLManager implements LiquidEtherWebGL {
-            props: any;
+            props: Record<string, any>;
             output!: Output;
             autoDriver?: AutoDriver;
             lastUserInteraction = performance.now();
@@ -1008,7 +1008,7 @@ export default function LiquidEther({
             private _loop = this.loop.bind(this);
             private _resize = this.resize.bind(this);
             private _onVisibility?: () => void;
-            constructor(props: any) {
+            constructor(props: Record<string, any>) {
                 this.props = props;
                 Common.init(props.$wrapper);
                 Mouse.init(props.$wrapper);
@@ -1018,7 +1018,7 @@ export default function LiquidEther({
                     this.lastUserInteraction = performance.now();
                     if (this.autoDriver) this.autoDriver.forceStop();
                 };
-                this.autoDriver = new AutoDriver(Mouse, this as any, {
+                this.autoDriver = new AutoDriver(Mouse, this, {
                     enabled: props.autoDemo,
                     speed: props.autoSpeed,
                     resumeDelay: props.autoResumeDelay,

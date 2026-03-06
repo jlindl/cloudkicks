@@ -27,7 +27,7 @@ interface ProductNode {
 }
 
 export default async function ProductShowcase() {
-    let products: any[] = [];
+    let products: Array<{ node: ProductNode }> = [];
 
     try {
         const { data } = await client.request(GET_PRODUCTS_QUERY, { variables: { first: 3 } });
@@ -68,7 +68,6 @@ export default async function ProductShowcase() {
                 <div className="grid gap-6 md:grid-cols-3">
                     {products.map(({ node }: { node: ProductNode }, index: number) => {
                         const imageUrl = node.images.edges[0]?.node.url || "";
-                        const altText = node.images.edges[0]?.node.altText || node.title;
                         const price = parseFloat(node.priceRange.minVariantPrice.amount).toFixed(2);
                         const currency = node.priceRange.minVariantPrice.currencyCode;
 
@@ -77,15 +76,11 @@ export default async function ProductShowcase() {
                                 <Link href={`/products/${node.handle}`} className="absolute inset-0 z-20" aria-label={`View ${node.title}`} />
                                 <TiltedCard
                                     imageSrc={imageUrl}
-                                    altText={altText}
                                     captionText=""
                                     containerHeight="100%"
                                     containerWidth="100%"
-                                    imageHeight="100%"
-                                    imageWidth="100%"
                                     rotateAmplitude={12}
                                     scaleOnHover={1.05}
-                                    showMobileWarning={false}
                                     showTooltip={false}
                                     displayOverlayContent={true}
                                     overlayContent={

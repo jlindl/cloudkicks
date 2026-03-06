@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const philosophyText = "We didn't set out to make a slipper. We set out to redefine comfort.";

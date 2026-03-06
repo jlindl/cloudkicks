@@ -38,7 +38,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         }
     }, []);
 
-    const toggleCart = () => setIsOpen((prev) => !prev);
     const openCart = () => setIsOpen(true);
     const closeCart = () => setIsOpen(false);
 
@@ -48,7 +47,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
     const addToCart = async (variantId: string) => {
         try {
-            let cartId = cart?.id || localStorage.getItem("shopify_cart_id");
+            const cartId = cart?.id || localStorage.getItem("shopify_cart_id");
 
             if (!cartId) {
                 // Create Cart

@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import ScrollReveal from "../reveal"; // We'll update the shop page to use our sophisticated scroll-reveal if available. For now using what was imported.
+
 
 interface ProductNode {
     id: string;
@@ -30,7 +30,7 @@ interface ProductNode {
 
 const ProductCard = ({ node }: { node: ProductNode }) => {
     const ref = useRef<HTMLAnchorElement>(null);
-    const [isHovered, setIsHovered] = useState(false);
+
 
     // Mouse coordinates for 3D tilt
     const mouseX = useMotionValue(0);
@@ -61,7 +61,6 @@ const ProductCard = ({ node }: { node: ProductNode }) => {
     };
 
     const handleMouseLeave = () => {
-        setIsHovered(false);
         mouseX.set(0);
         mouseY.set(0);
     };
@@ -81,7 +80,6 @@ const ProductCard = ({ node }: { node: ProductNode }) => {
                 href={`/products/${node.handle}`}
                 ref={ref}
                 onMouseMove={handleMouseMove}
-                onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={handleMouseLeave}
                 className="group relative flex flex-col h-full bg-neutral-900/50 backdrop-blur-xl rounded-[2rem] border border-white/5 transition-colors duration-500 overflow-hidden block"
             >

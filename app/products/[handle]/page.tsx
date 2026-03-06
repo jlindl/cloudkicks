@@ -16,6 +16,31 @@ interface ProductPageProps {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
+interface ShopifyOption {
+    name: string;
+    value: string;
+}
+
+interface ShopifyVariantNode {
+    id: string;
+    title: string;
+    availableForSale: boolean;
+    price: {
+        amount: string;
+        currencyCode: string;
+    };
+    selectedOptions: ShopifyOption[];
+}
+
+interface ShopifyVariantEdge {
+    node: ShopifyVariantNode;
+}
+
+interface ShopifyImageEdge {
+    node: unknown; // Keep simple for image node right now
+}
+
+
 export default async function ProductPage({ params, searchParams }: ProductPageProps) {
     const { handle } = await params;
     const searchParamsValue = await searchParams; // Await search params for variant logic
@@ -38,8 +63,8 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
 
     // ──── Logic: Determine Selected Variant ─────────────────────────
     // 1. Find the variant that matches all selected options from URL search params
-    const selectedVariant = variants.edges.find((edge: any) => {
-        return edge.node.selectedOptions.every((option: any) => {
+    const selectedVariant = variants.edges.find((edge: ShopifyVariantEdge) => {
+        return edge.node.selectedOptions.every((option: ShopifyOption) => {
             return searchParamsValue[option.name] === option.value;
         });
     })?.node || variants.edges[0]?.node; // Fallback to first variant if no match
@@ -47,11 +72,11 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
     // 2. Prepare images
     const allImages = [
         images.edges[0]?.node,
-        ...images.edges.slice(1).map((edge: any) => edge.node)
+        ...images.edges.slice(1).map((edge: ShopifyImageEdge) => edge.node)
     ].filter(Boolean);
 
     // 3. Prepare options for selector (ensure unique values)
-    const validOptions = options.filter((opt: any) => opt.name !== "Title"); // Filter out default "Title" option if present
+    const validOptions = options.filter((opt: { name: string; values: string[] }) => opt.name !== "Title"); // Filter out default "Title" option if present
 
     return (
         <div className="bg-black min-h-screen font-inter text-white selection:bg-white selection:text-black">
@@ -112,7 +137,7 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
 
                                 {/* Variant Selector */}
                                 <div className="mb-8">
-                                    <VariantSelector options={validOptions} variants={variants.edges.map((e: any) => e.node)} />
+                                    <VariantSelector options={validOptions} variants={variants.edges.map((e: ShopifyVariantEdge) => e.node)} />
                                 </div>
 
                                 {/* Add to Cart */}

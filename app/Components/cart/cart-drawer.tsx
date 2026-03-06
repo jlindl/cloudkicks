@@ -59,7 +59,7 @@ export default function CartDrawer() {
                                     <div>
                                         <h3 className="text-xl font-bold text-white mb-2">Your cart is empty</h3>
                                         <p className="text-neutral-400 text-sm max-w-[200px] mx-auto">
-                                            Looks like you haven't added anything to your cart yet.
+                                            Looks like you haven&apos;t added anything to your cart yet.
                                         </p>
                                     </div>
                                     <button
