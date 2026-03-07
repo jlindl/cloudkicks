@@ -105,10 +105,10 @@ export default function CartDrawer() {
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-white via-gray-200 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                                    <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors">
+                                    <span className="relative z-10 flex items-center gap-2 transition-colors">
                                         Checkout <Lock className="w-4 h-4 opacity-50" />
                                     </span>
-                                    <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform group-hover:text-white" />
+                                    <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </a>
                             </div>
                         )}

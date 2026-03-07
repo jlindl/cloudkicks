@@ -42,8 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${kanit.variable} ${signika.variable} ${geistMono.variable} ${inter.variable} font-sans min-h-screen bg-black text-white antialiased`}
       >
         <CartProvider>

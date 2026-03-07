@@ -97,7 +97,7 @@ export default function AboutTechnology() {
                         style={{ opacity: img1Opacity, scale: img1Scale }}
                         className="absolute inset-0 w-full h-full will-change-transform"
                     >
-                        <Image src="/assets/cloud_kicks_hero_final.png" alt="CloudKicks in Premium Lounge" fill className="object-cover" priority />
+                        <Image src="/assets/image copy 2.png" alt="CloudKicks in Premium Lounge" fill className="object-cover" priority />
 
                         {/* Branded Subtle Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -108,7 +108,7 @@ export default function AboutTechnology() {
                         style={{ opacity: img2Opacity, scale: img2Scale }}
                         className="absolute inset-0 w-full h-full will-change-transform"
                     >
-                        <Image src="/assets/about_material_mesh.png" alt="Tech Material Mesh" fill className="object-cover" />
+                        <Image src="/assets/blue 2 (1).jpg" alt="Designed with Intent" fill className="object-cover" />
 
                         <div className="absolute inset-0 bg-gradient-to-tl from-space-900/40 to-transparent mix-blend-overlay" />
                     </motion.div>

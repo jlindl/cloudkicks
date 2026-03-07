@@ -124,19 +124,19 @@ const ProductCard = ({ node }: { node: ProductNode }) => {
                     </div>
 
                     {/* Product Meta */}
-                    <div className="p-6 md:p-8 flex flex-col flex-1 transform-gpu transition-all duration-300 group-hover:bg-white/[0.02]">
-                        <div className="flex justify-between items-start gap-4 mb-2">
-                            <h3 className="text-2xl font-kanit font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-neutral-400 transition-all duration-300 leading-tight uppercase tracking-tight">
+                    <div className="p-6 md:p-8 flex flex-col flex-1 transform-gpu transition-all duration-300 group-hover:bg-white/[0.02] text-center">
+                        <div className="flex flex-col items-center gap-2 mb-4">
+                            <h3 className="text-2xl md:text-3xl font-kanit font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-neutral-400 transition-all duration-300 leading-tight uppercase tracking-tight">
                                 {node.title}
                             </h3>
-                            <p className="text-xl font-mono text-white shrink-0 mt-1">
+                            <p className="text-xl font-mono text-white">
                                 {node.priceRange.minVariantPrice.amount}
                                 <span className="text-xs text-neutral-500 ml-1 uppercase">
                                     {node.priceRange.minVariantPrice.currencyCode}
                                 </span>
                             </p>
                         </div>
-                        <p className="text-sm text-neutral-400 line-clamp-2 font-light leading-relaxed mt-auto">
+                        <p className="text-sm text-neutral-400 max-w-[280px] mx-auto line-clamp-2 font-light leading-relaxed">
                             {node.description}
                         </p>
                     </div>
@@ -150,9 +150,11 @@ export default function ShopGridClient({ products }: { products: { node: Product
     if (!products?.length) return null;
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-10">
             {products.map(({ node }) => (
-                <ProductCard key={node.handle} node={node} />
+                <div key={node.handle} className="w-full md:w-[calc(50%-1.25rem)] lg:w-[calc(33.33%-1.67rem)] max-w-sm lg:max-w-none">
+                    <ProductCard node={node} />
+                </div>
             ))}
         </div>
     );

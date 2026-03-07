@@ -32,7 +32,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ images }) => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col gap-4">
+        <div className="w-full h-full flex flex-col gap-4" suppressHydrationWarning>
 
             {/* Mobile: Horizontal Scroll Snap Carousel */}
             <div className="lg:hidden relative w-full aspect-[4/5] overflow-hidden rounded-3xl bg-neutral-900">

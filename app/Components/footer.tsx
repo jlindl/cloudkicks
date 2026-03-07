@@ -79,7 +79,11 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs font-light">
-              Engineered for effortless living. CloudKicks are where cloud-soft comfort meets clean, everyday style.
+              Streetwear comfort, done right
+            </p>
+
+            <p className="text-sm text-gray-400 leading-relaxed max-w-xs font-light">
+              Join the Cloud.
             </p>
 
             {/* Social icons */}
@@ -89,8 +93,9 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/8 transition-all duration-200"
+                  className="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-all duration-200"
                 >
                   {s.icon}
                 </a>
