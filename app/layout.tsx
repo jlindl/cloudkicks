@@ -36,6 +36,8 @@ import Footer from "./Components/footer";
 import { CartProvider } from "./contexts/cart-context";
 import CartDrawer from "./Components/cart/cart-drawer";
 
+import { Analytics } from "@vercel/analytics/next";
+
 export default function RootLayout({
   children,
 }: {
@@ -56,6 +58,7 @@ export default function RootLayout({
           <Newsletter />
           <Footer />
         </CartProvider>
+        <Analytics />
       </body>
     </html>
   );
