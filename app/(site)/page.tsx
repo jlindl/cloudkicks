@@ -1,8 +1,8 @@
 import React from "react";
-import Hero from "./Components/hero";
-import DynamicShowcase from "./Components/dynamic-showcase";
-import Showcase2 from "./Components/showcase2";
-import Reviews from "./Components/reviews";
+import Hero from "../Components/hero";
+import DynamicShowcase from "../Components/dynamic-showcase";
+import Showcase2 from "../Components/showcase2";
+import Reviews from "../Components/reviews";
 
 const Page: React.FC = () => {
   return (
