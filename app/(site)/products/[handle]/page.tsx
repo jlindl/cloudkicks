@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import { client } from "../../../lib/shopify";
-import { GET_PRODUCT_BY_HANDLE_QUERY } from "../../../lib/shopify/queries";
-import AddToCartButton from "../../Components/cart/add-to-cart-button";
-import Reveal from "../../Components/reveal";
-import ProductGallery from "../../Components/product/product-gallery";
-import VariantSelector from "../../Components/product/variant-selector";
+import { client } from "../../../../lib/shopify";
+import { GET_PRODUCT_BY_HANDLE_QUERY } from "../../../../lib/shopify/queries";
+import AddToCartButton from "../../../Components/cart/add-to-cart-button";
+import Reveal from "../../../Components/reveal";
+import ProductGallery from "../../../Components/product/product-gallery";
+import VariantSelector from "../../../Components/product/variant-selector";
 import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
