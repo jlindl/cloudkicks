@@ -9,7 +9,7 @@ const variants = [
     {
         id: "magma",
         name: "Magma Edition",
-        price: "159.00 GBP",
+        price: "39.99 GBP",
         color: "Volcanic Red",
         image: "/assets/variant_magma.png",
         description: "Forged in fire. The hottest drop of the season."
@@ -17,7 +17,7 @@ const variants = [
     {
         id: "ice",
         name: "Arctic Ice",
-        price: "159.00 GBP",
+        price: "39.99 GBP",
         color: "Glacial Blue",
         image: "/assets/variant_ice.png",
         description: "Stay cool. Crystal clear comfort below zero."
@@ -25,7 +25,7 @@ const variants = [
     {
         id: "cyber",
         name: "Cyber Neon",
-        price: "159.00 GBP",
+        price: "39.99 GBP",
         color: "Electric Purple",
         image: "/assets/variant_cyber.png",
         description: "Future ready. Glow through the night."

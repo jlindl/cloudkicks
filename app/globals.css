@@ -1,9 +1,33 @@
 @import "tailwindcss";
 
+:root {
+    /* Site-wide zoom level. 1 = default, 0.75 ≈ browser zoom at 75%. */
+    --site-zoom: 0.75;
+}
+
 /* Global smooth scrolling */
 html {
+    zoom: var(--site-zoom);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * CSS `zoom` scales lengths but does not rescale viewport units, so a
+ * `100vh` section would only cover `--site-zoom` of the window. Divide the
+ * viewport-height utilities back out so full-height sections still fill the
+ * screen at any zoom level.
+ */
+.h-screen {
+    height: calc(100vh / var(--site-zoom));
+}
+
+.min-h-screen {
+    min-height: calc(100vh / var(--site-zoom));
+}
+
+.max-h-screen {
+    max-height: calc(100vh / var(--site-zoom));
 }
 
 @theme {
