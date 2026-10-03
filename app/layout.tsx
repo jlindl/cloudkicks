@@ -33,6 +33,7 @@ import { CartProvider } from "./contexts/cart-context";
 import CartDrawer from "./Components/cart/cart-drawer";
 
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -50,6 +51,12 @@ export default function RootLayout({
           {children}
         </CartProvider>
         <Analytics />
+        {/* Klaviyo onsite JS: powers the newsletter sign-up popup and Active on Site tracking */}
+        <Script
+          id="klaviyo-onsite"
+          src="https://static.klaviyo.com/onsite/js/Y4C4ZX/klaviyo.js?company_id=Y4C4ZX"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
